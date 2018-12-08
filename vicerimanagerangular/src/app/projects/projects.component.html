@@ -18,18 +18,18 @@
       </tr>
   </thead>
   <tbody>
-      <tr>
+      <tr *ngFor="let project of restaurants" >
           <td>
-              item.ProjectGitId
+              {{project.ProjectGitId}}
           </td>
           <td>
-              item.Name
+              {{project.Name}}
           </td>
           <td>
-              item.Web_URL
+            {{project.Web_URL}}
           </td>
           <td>
-              item.IsImported
+              {{project.IsImported}}
           </td>
           <td>
               Edit | Details |  Delete
