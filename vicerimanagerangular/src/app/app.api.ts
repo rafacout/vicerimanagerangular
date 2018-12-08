@@ -1,1 +1,1 @@
-export const API_URL = 'http://viceriprojectmanagerapi.azurewebsites.net/api';
+export const API_URL = 'http://localhost/vicerimanager/api';
