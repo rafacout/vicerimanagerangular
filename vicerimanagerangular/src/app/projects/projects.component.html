@@ -32,7 +32,10 @@
               {{project.IsImported}}
           </td>
           <td>
-              Edit | Details |  Delete
+              <a [routerLink]="['/projects', project.Id]">Details</a> 
+              <!-- | 
+              <a [routerLink]="['/projects', project.Id]">Update</a> |  
+              <a [routerLink]="['/projects', project.Id]">Delete</a> -->
           </td>
       </tr>
   </tbody>

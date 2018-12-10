@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { IssuesComponent } from './issues/issues.component';
 import { RouterModule } from '@angular/router';
+import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RouterModule } from '@angular/router';
     AboutComponent,
     HomeComponent,
     HeaderComponent,
-    IssuesComponent
+    IssuesComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
