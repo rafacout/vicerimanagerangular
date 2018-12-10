@@ -1,5 +1,4 @@
 <h2>Project Delete</h2>
-<br>
 <h3>Are you sure you want to delete this?</h3>
 <div>
   <dl class="dl-horizontal">
@@ -54,5 +53,5 @@
 </div>
 <p>
     <a class="btn btn-default" [routerLink]="['/projects']">Back to List</a>
-    <a class="btn btn-danger">Delete</a>
+    <a class="btn btn-danger" (click)="deleteProject(project.Id)">Delete</a>
 </p>

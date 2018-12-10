@@ -24,4 +24,21 @@ export class ProjectsService {
     .map(response => response.json())
     .catch(ErrorHandler.handleError);
   }
+
+  deleteProject(id: string) {
+    return this.http.delete(`${API_URL}/projects/${id}`)
+    .catch(ErrorHandler.handleError);
+  }
+
+  update(project: Project) {
+    this.http.put(`${API_URL}/projects`, project)
+    .map(response => response.json())
+    .catch(ErrorHandler.handleError);
+  }
+
+  insert(project: Project) {
+    this.http.post(`${API_URL}/projects`, project)
+    .map(response => response.json())
+    .catch(ErrorHandler.handleError);
+  }
 }
