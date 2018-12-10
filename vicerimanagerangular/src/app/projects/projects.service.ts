@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Project } from './project/project.model';
+import { Project } from './project.model';
 import { API_URL } from '../app.api';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';

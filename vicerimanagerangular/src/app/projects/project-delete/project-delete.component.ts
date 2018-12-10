@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Project } from '../project.model';
 import { ProjectsService } from '../projects.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-project-detail',
-  templateUrl: './project-detail.component.html',
-  styleUrls: ['./project-detail.component.css']
+  selector: 'app-project-delete',
+  templateUrl: './project-delete.component.html',
+  styleUrls: ['./project-delete.component.css']
 })
-export class ProjectDetailComponent implements OnInit {
+export class ProjectDeleteComponent implements OnInit {
 
   project: Project;
 

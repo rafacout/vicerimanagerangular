@@ -4,12 +4,18 @@ import { IssuesComponent } from './issues/issues.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
+import { ProjectUpdateComponent } from './projects/project-update/project-update.component';
+import { ProjectDeleteComponent } from './projects/project-delete/project-delete.component';
 
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
     {path: 'about', component: AboutComponent},
     {path: 'projects', component: ProjectsComponent},
-    {path: 'projects/:id', component: ProjectDetailComponent},
+    {path: 'projects/create', component: ProjectDetailComponent},
+    {path: 'projects/details/:id', component: ProjectDetailComponent},
+    {path: 'projects/update/:id', component: ProjectUpdateComponent},
+    {path: 'projects/delete/:id', component: ProjectDeleteComponent},
     {path: 'issues', component: IssuesComponent}
 ];
+

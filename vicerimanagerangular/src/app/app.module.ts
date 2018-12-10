@@ -3,29 +3,33 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { ROUTES } from './app.routes';
+import { RouterModule } from '@angular/router';
+import { ProjectsService } from './projects/projects.service';
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ProjectComponent } from './projects/project/project.component';
-
-import { ProjectsService } from './projects/projects.service';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { IssuesComponent } from './issues/issues.component';
-import { RouterModule } from '@angular/router';
+
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
+import { ProjectUpdateComponent } from './projects/project-update/project-update.component';
+import { ProjectCreateComponent } from './projects/project-create/project-create.component';
+import { ProjectDeleteComponent } from './projects/project-delete/project-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsComponent,
-    ProjectComponent,
     AboutComponent,
     HomeComponent,
     HeaderComponent,
     IssuesComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    ProjectUpdateComponent,
+    ProjectCreateComponent,
+    ProjectDeleteComponent
   ],
   imports: [
     BrowserModule,
