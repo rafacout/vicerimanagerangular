@@ -1,32 +1,33 @@
 <div class="col-md-6">
     <h2 class="text-center">Create Project</h2>
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
-      
-      <input type="hidden" formControlName="Id" id="Id" name="Id">
-      <input type="hidden" formControlName="IsImported" id="IsImported" name="IsImported">
-      <input type="hidden" formControlName="Open_Issues_Count" id="Open_Issues_Count" name="Open_Issues_Count">
+
+    <form #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
 
       <div class="form-group">
         <label for="ProjectGitId">Project Git Id:</label>
-        <input formControlName="ProjectGitId" placeholder="Project Git Id" name="ProjectGitId" class="form-control" id="ProjectGitId">
+        <input type="number" placeholder="Project Git Id" [(ngModel)]="project.ProjectGitId" #iptProjectGitId="ngModel" required maxlength="9" name="ProjectGitId" class="form-control" id="ProjectGitId">
+        <span class="danger" *ngIf="!iptProjectGitId.valid && (iptProjectGitId?.dirty || iptProjectGitId?.touched)"><i class="fa fa-remove"></i> Campo inválido</span>
       </div>
   
       <div class="form-group">
         <label for="Name">Name:</label>
-        <input formControlName="Name" placeholder="Name" name="Name" class="form-control" id="Name">
+        <input placeholder="Name" name="Name" [(ngModel)]="project.Name" #iptName="ngModel" required maxlength="1000" class="form-control" id="Name">
+        <span class="danger" *ngIf="!iptName.valid && (iptName?.dirty || iptName?.touched)"><i class="fa fa-remove"></i> Campo inválido</span>
       </div>
   
       <div class="form-group">
         <label for="Description">Description:</label>
-        <input formControlName="Description" placeholder="Description" name="Description" class="form-control" id="Description">
+        <input placeholder="Description" [(ngModel)]="project.Description" #iptDescription="ngModel" maxlength="1000" name="Description" class="form-control" id="Description">
+        <span class="danger" *ngIf="!iptDescription.valid && (iptDescription?.dirty || iptDescription?.touched)"><i class="fa fa-remove"></i> Campo inválido</span>
       </div>
   
       <div class="form-group">
         <label for="Web_URL">URL:</label>
-        <input formControlName="Web_URL" placeholder="URL" name="Web_URL" class="form-control" id="Web_URL">
+        <input type="url" placeholder="URL" pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$" name="Web_URL" [(ngModel)]="project.Web_URL"  #iptURL="ngModel" maxlength="1000" required class="form-control" id="Web_URL">
+        <span class="danger" *ngIf="!iptURL.valid && (iptURL?.dirty || iptURL?.touched)"><i class="fa fa-remove"></i> Campo inválido</span>
       </div>
 
       <a class="btn btn-default" [routerLink]="['/projects']">Back to List</a>
-      <button type="submit" class="btn btn-success">Create</button>
+      <button type="submit" class="btn btn-success" [disabled]="!form.valid">Create</button>
     </form>
   </div>

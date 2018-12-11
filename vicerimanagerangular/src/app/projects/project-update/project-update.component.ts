@@ -11,37 +11,19 @@ import {first} from 'rxjs/operators';
 })
 export class ProjectUpdateComponent implements OnInit {
 
-  project: Project;
-  editForm: FormGroup;
+  project: Project = new Project();
 
-  constructor(private formBuilder: FormBuilder,
-              private projectService: ProjectsService,
+  constructor(private projectService: ProjectsService,
               private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
-    this.editForm = this.formBuilder.group({
-      Id: [],
-      IsImported: [],
-      Open_Issues_Count: [],
-      ProjectGitId: ['', Validators.required],
-      Name: ['', Validators.required],
-      Description: ['', Validators.required],
-      Web_URL: ['', Validators.required]
-    });
-
     this.projectService.projectById(this.route.snapshot.params['id'])
-    .subscribe(data => this.editForm.setValue(data));
+    .subscribe(project => this.project = project);
   }
 
-  // updateProject() {
-  //   this.projectService.updateProject(this.project)
-  //   .subscribe((data) => this.router.navigate(['projects']));
-  // }
-
   onSubmit() {
-    this.projectService.updateProject(this.editForm.value)
-      .pipe(first())
+    this.projectService.updateProject(this.project)
       .subscribe(
         data => {
           this.router.navigate(['projects']);

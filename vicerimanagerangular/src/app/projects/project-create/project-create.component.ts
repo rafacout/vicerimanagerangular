@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../model/project.model';
 import { ProjectsService } from '../service/projects.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {first} from 'rxjs/operators';
 
 @Component({
@@ -11,29 +10,18 @@ import {first} from 'rxjs/operators';
 })
 export class ProjectCreateComponent implements OnInit {
 
-  project: Project;
-  editForm: FormGroup;
+  project: Project = new Project();
 
-  constructor(private formBuilder: FormBuilder,
-              private projectService: ProjectsService,
+  constructor(private projectService: ProjectsService,
               private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
-    this.editForm = this.formBuilder.group({
-      Id: [],
-      IsImported: [],
-      Open_Issues_Count: [],
-      ProjectGitId: ['', Validators.required],
-      Name: ['', Validators.required],
-      Description: ['', Validators.required],
-      Web_URL: ['', Validators.required]
-    });
+    this.project.Id = 0;
   }
 
   onSubmit() {
-    this.projectService.insertProject(this.editForm.value)
-      .pipe(first())
+    this.projectService.insertProject(this.project)
       .subscribe(
         data => {
           this.router.navigate(['projects']);
@@ -42,5 +30,5 @@ export class ProjectCreateComponent implements OnInit {
           alert(error);
         });
   }
-
 }
+

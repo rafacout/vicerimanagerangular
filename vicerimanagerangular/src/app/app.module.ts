@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
@@ -36,7 +36,7 @@ import { ProjectListComponent } from './projects/project-list/project-list.compo
   imports: [
     BrowserModule,
     HttpModule,
-    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ProjectsService],
