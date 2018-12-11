@@ -7,8 +7,7 @@ import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-project-create',
-  templateUrl: './project-create.component.html',
-  styleUrls: ['./project-create.component.css']
+  templateUrl: './project-create.component.html'
 })
 export class ProjectCreateComponent implements OnInit {
 

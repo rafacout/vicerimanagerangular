@@ -5,8 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-delete',
-  templateUrl: './project-delete.component.html',
-  styleUrls: ['./project-delete.component.css']
+  templateUrl: './project-delete.component.html'
 })
 export class ProjectDeleteComponent implements OnInit {
 

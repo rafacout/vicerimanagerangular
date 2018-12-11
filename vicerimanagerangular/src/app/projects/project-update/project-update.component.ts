@@ -7,8 +7,7 @@ import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-project-update',
-  templateUrl: './project-update.component.html',
-  styleUrls: ['./project-update.component.css']
+  templateUrl: './project-update.component.html'
 })
 export class ProjectUpdateComponent implements OnInit {
 
