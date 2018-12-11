@@ -7,7 +7,6 @@ import { ErrorHandler } from '../../app.error-handler';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-
 @Injectable()
 export class ProjectsService {
 
@@ -37,6 +36,11 @@ export class ProjectsService {
 
   insertProject(project: Project) {
     return this.http.post(`${API_URL}/projects`, project)
+    .catch(ErrorHandler.handleError);
+  }
+
+  importProjects() {
+    return this.http.get(`${API_URL}/importprojects`)
     .catch(ErrorHandler.handleError);
   }
 }

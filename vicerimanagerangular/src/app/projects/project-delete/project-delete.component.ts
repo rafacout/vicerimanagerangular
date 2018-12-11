@@ -23,7 +23,7 @@ export class ProjectDeleteComponent implements OnInit {
   }
 
   deleteProject(id: string) {
-    this.projectService.deleteProject(id)
+    return this.projectService.deleteProject(id)
     .subscribe((data) => this.router.navigate(['projects']));
   }
 
