@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
@@ -18,6 +19,7 @@ import { ProjectUpdateComponent } from './projects/project-update/project-update
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 import { ProjectDeleteComponent } from './projects/project-delete/project-delete.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { ProjectDeleteComponent } from './projects/project-delete/project-delete
   imports: [
     BrowserModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ProjectsService],

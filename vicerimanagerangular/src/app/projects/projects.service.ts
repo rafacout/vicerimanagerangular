@@ -30,15 +30,13 @@ export class ProjectsService {
     .catch(ErrorHandler.handleError);
   }
 
-  update(project: Project) {
-    this.http.put(`${API_URL}/projects`, project)
-    .map(response => response.json())
+  updateProject(project: Project) {
+    return this.http.put(`${API_URL}/projects`, project)
     .catch(ErrorHandler.handleError);
   }
 
-  insert(project: Project) {
-    this.http.post(`${API_URL}/projects`, project)
-    .map(response => response.json())
+  insertProject(project: Project) {
+    return this.http.post(`${API_URL}/projects`, project)
     .catch(ErrorHandler.handleError);
   }
 }
