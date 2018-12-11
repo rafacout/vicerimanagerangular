@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e2cbcbb6-88a0-40c6-8ef0-30ed0b93b705/resourceGroups/viceriresourcegroup/providers/Microsoft.Web/sites/viceriprojectmanagerangular",
+    "appService.deploySubpath": "dist"
+}
