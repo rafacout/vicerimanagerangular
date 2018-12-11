@@ -7,7 +7,7 @@
         <thead>
             <tr class="info">
                 <th>
-                    Id
+                    Project Git Id
                 </th>
                 <th>
                     Name
@@ -34,12 +34,12 @@
                     {{project.Web_URL}}
                 </td>
                 <td>
-                    {{project.IsImported}}
+                    <input type="checkbox" [checked]="project.IsImported" disabled="disabled"/>
                 </td>
                 <td>
-                    <a [routerLink]="['/projects/details', project.Id]">Details</a> | 
-                    <a [routerLink]="['/projects/update', project.Id]">Update</a> |  
-                    <a [routerLink]="['/projects/delete', project.Id]">Delete</a>
+                    <button class="btn btn-xs btn-primary" [routerLink]="['/projects/details', project.Id]" title="Details"><i class="fa fa-file-text-o"></i></button>
+                    <button class="btn btn-xs btn-warning" [routerLink]="['/projects/update', project.Id]" title=Edit><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-xs btn-danger" [routerLink]="['/projects/delete', project.Id]" title="Delete"><i class="fa fa-close"></i></button>
                 </td>
             </tr>
         </tbody>

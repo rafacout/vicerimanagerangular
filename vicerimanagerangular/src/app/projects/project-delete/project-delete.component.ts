@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../project.model';
-import { ProjectsService } from '../projects.service';
+import { Project } from '../model/project.model';
+import { ProjectsService } from '../service/projects.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

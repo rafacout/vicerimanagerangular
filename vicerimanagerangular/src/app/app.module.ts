@@ -5,10 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
-import { ProjectsService } from './projects/projects.service';
+import { ProjectsService } from './projects/service/projects.service';
 
 import { AppComponent } from './app.component';
-import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,12 +17,12 @@ import { ProjectDetailComponent } from './projects/project-detail/project-detail
 import { ProjectUpdateComponent } from './projects/project-update/project-update.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 import { ProjectDeleteComponent } from './projects/project-delete/project-delete.component';
+import { ProjectListComponent } from './projects/project-list/project-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectsComponent,
     AboutComponent,
     HomeComponent,
     HeaderComponent,
@@ -31,7 +30,8 @@ import { ProjectDeleteComponent } from './projects/project-delete/project-delete
     ProjectDetailComponent,
     ProjectUpdateComponent,
     ProjectCreateComponent,
-    ProjectDeleteComponent
+    ProjectDeleteComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
