@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProjectDeleteComponent implements OnInit {
 
-  project: Project;
+  project: Project = new Project();
   response: string;
 
   constructor(private projectService: ProjectsService,
@@ -21,8 +21,8 @@ export class ProjectDeleteComponent implements OnInit {
     .subscribe(project => this.project = project);
   }
 
-  deleteProject(id: string) {
-    return this.projectService.deleteProject(id)
+  deleteProject() {
+    return this.projectService.deleteProject(this.route.snapshot.params['id'])
     .subscribe((data) => this.router.navigate(['projects']));
   }
 

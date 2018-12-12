@@ -9,7 +9,7 @@ import { ProjectsService } from '../service/projects.service';
 })
 export class ProjectDetailComponent implements OnInit {
 
-  project: Project;
+  project: Project = new Project();
 
   constructor(private projectService: ProjectsService,
               private route: ActivatedRoute) { }
